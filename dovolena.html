@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Výpočet dovolené | Kalkulačka</title>
+<meta name="description" content="Spočítejte si kolik dní dovolené máte nárok v ČR.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5771663112578120"
+     crossorigin="anonymous"></script>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  margin:0;
+}
+
+.container {
+  max-width:400px;
+  margin:100px auto;
+  padding:20px;
+  background: rgba(255,255,255,0.05);
+  border-radius:15px;
+}
+
+input, button {
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:8px;
+  border:none;
+}
+
+button {
+  background:#22c55e;
+  color:white;
+  font-weight:bold;
+}
+
+.result {
+  margin-top:15px;
+  font-size:18px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Výpočet dovolené</h1>
+
+  <input type="number" id="months" placeholder="Odpracované měsíce">
+  <input type="number" id="daysYear" placeholder="Dovolená za rok (např. 20 dní)">
+
+  <button onclick="calc()">Spočítat</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+<div style="max-width:800px; margin:40px auto; padding:20px;">
+  <p>
+  Tato kalkulačka vám pomůže spočítat nárok na dovolenou podle počtu odpracovaných měsíců.
+  </p>
+</div>
+
+<div style="text-align:center; margin:40px 0;">
+  <a href="index.html">Čistá mzda</a> |
+  <a href="hodinova.html">Hodinová mzda</a> |
+  <a href="cena-prace.html">Cena práce</a>
+</div>
+
+<script>
+function calc(){
+  let months = parseFloat(document.getElementById("months").value) || 0;
+  let daysYear = parseFloat(document.getElementById("daysYear").value) || 0;
+
+  let result = (daysYear / 12) * months;
+
+  document.getElementById("result").innerHTML =
+    "Nárok na dovolenou: " + Math.round(result) + " dní";
+}
+</script>
+
+</body>
+</html>

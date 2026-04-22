@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daňový kalkulátor | Výpočet daně</title>
+<meta name="description" content="Spočítejte si daň z příjmu v České republice rychle a jednoduše.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5771663112578120"
+     crossorigin="anonymous"></script>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  margin:0;
+}
+
+.container {
+  max-width:400px;
+  margin:100px auto;
+  padding:20px;
+  background: rgba(255,255,255,0.05);
+  border-radius:15px;
+}
+
+input, button {
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:8px;
+  border:none;
+}
+
+button {
+  background:#22c55e;
+  color:white;
+  font-weight:bold;
+}
+
+.result {
+  margin-top:15px;
+  font-size:18px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Daňový kalkulátor</h1>
+
+  <input type="number" id="income" placeholder="Roční příjem (Kč)">
+
+  <button onclick="calc()">Spočítat</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+<div style="max-width:800px; margin:40px auto; padding:20px;">
+  <p>
+  Tento nástroj vám pomůže orientačně spočítat daň z příjmu v České republice.
+  </p>
+</div>
+
+<div style="text-align:center; margin:40px 0;">
+  <a href="index.html">Čistá mzda</a> |
+  <a href="hodinova.html">Hodinová mzda</a> |
+  <a href="cena-prace.html">Cena práce</a> |
+  <a href="dovolena.html">Dovolená</a>
+</div>
+
+<script>
+function calc(){
+  let income = parseFloat(document.getElementById("income").value) || 0;
+
+  let tax = income * 0.15;
+
+  document.getElementById("result").innerHTML =
+    "Daň: " + Math.round(tax) + " Kč";
+}
+</script>
+
+</body>
+</html>

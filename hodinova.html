@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Výpočet hodinové mzdy | Kalkulačka</title>
+<meta name="description" content="Spočítejte si hodinovou mzdu rychle a jednoduše online.">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5771663112578120"
+     crossorigin="anonymous"></script>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  margin:0;
+}
+
+.container {
+  max-width:400px;
+  margin:100px auto;
+  padding:20px;
+  background: rgba(255,255,255,0.05);
+  border-radius:15px;
+}
+
+input, button {
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:8px;
+  border:none;
+}
+
+button {
+  background:#22c55e;
+  color:white;
+  font-weight:bold;
+}
+
+.result {
+  margin-top:15px;
+  font-size:18px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Výpočet hodinové mzdy</h1>
+
+  <input type="number" id="salary" placeholder="Měsíční mzda (Kč)">
+  <input type="number" id="hours" placeholder="Počet hodin za měsíc">
+
+  <button onclick="calc()">Spočítat</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+<div style="max-width:800px; margin:40px auto; padding:20px;">
+  <p>
+  Tato kalkulačka vám pomůže spočítat hodinovou mzdu na základě měsíčního platu a počtu odpracovaných hodin.
+  </p>
+</div>
+
+<div style="text-align:center; margin:40px 0;">
+  <a href="index.html">Výpočet čisté mzdy</a> |
+  <a href="privacy.html">Ochrana osobních údajů</a>
+</div>
+
+<script>
+function calc(){
+  let salary = parseFloat(document.getElementById("salary").value) || 0;
+  let hours = parseFloat(document.getElementById("hours").value) || 0;
+
+  if(hours === 0) return;
+
+  let result = salary / hours;
+
+  document.getElementById("result").innerHTML =
+    "Hodinová mzda: " + Math.round(result) + " Kč";
+}
+</script>
+
+</body>
+</html>

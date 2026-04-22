@@ -62,9 +62,19 @@ button {
 </div>
 
 <div style="max-width:800px; margin:40px auto; padding:20px;">
-  <p>
-  Tato kalkulačka vám pomůže spočítat hodinovou mzdu na základě měsíčního platu a počtu odpracovaných hodin.
-  </p>
+ 
+     <h2>Výpočet hodinové mzdy</h2>
+<p>
+Hodinová mzda se vypočítá jako podíl měsíční mzdy a počtu odpracovaných hodin.
+Tato kalkulačka vám pomůže rychle zjistit, kolik vyděláváte za hodinu práce.
+</p>
+
+<h2>Jak spočítat hodinovou mzdu</h2>
+<p>
+Stačí zadat měsíční mzdu a počet odpracovaných hodin za měsíc.
+Kalkulačka automaticky vypočítá hodinovou mzdu v Kč.
+</p>
+     
 </div>
 
 <div style="text-align:center; margin:40px 0;">
@@ -84,7 +94,9 @@ function calc(){
   document.getElementById("result").innerHTML =
     "Hodinová mzda: " + Math.round(result) + " Kč";
 }
+     
 </script>
 
+     
 </body>
 </html>
